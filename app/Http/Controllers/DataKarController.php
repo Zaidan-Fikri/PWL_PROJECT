@@ -8,8 +8,19 @@ use App\Models\Karyawan;
 
 class DataKarController extends Controller
 {
-    public function datakar(){
+    public function index(){
         $karyawan = Karyawan::all();
-        return view('datakar', ['judul' => 'Data Karyawan', 'nama' => 'Data Karyawan', 'karyawan' => $karyawan]);
+        return view('karyawan.datakar', ['judul' => 'Data Karyawan', 'nama' => 'Data Karyawan', 'karyawan' => $karyawan]);
+    }
+
+    public function show($id){
+        $karyawan = Karyawan::find($id);
+        return view('karyawan.detail', ['judul' => 'Profile', 'nama' => 'Profile', 'karyawan' => $karyawan]);
+    }
+
+    public function destroy($id){
+        Karyawan::find($id)->delete();
+        return redirect()->route('karyawan.datakar')
+        -> with('success', 'Mahasiswa Berhasil Dihapus');
     }
 }

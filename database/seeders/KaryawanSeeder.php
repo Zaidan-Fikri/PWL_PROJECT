@@ -17,7 +17,7 @@ class KaryawanSeeder extends Seeder
         DB::table('karyawan')->insert(
             [
                 [
-                    'foto' => 'asstes/img/bruce-mars.jpg',
+                    'foto' => 'image/bruce-mars.jpg',
                     'nama' => 'Zaidan',
                     'email' => 'zaidan@gmail.com',
                     'no_hp' => '085646449670',

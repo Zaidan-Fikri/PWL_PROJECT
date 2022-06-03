@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\DataKarController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::resource('karyawan', DataKarController::class);
 
-Route::get('/dashboard', 'DashboardController@dashboard');
-
-Route::get('/data-karyawan', 'DataKarController@datakar');
+Route::resource('dashboard', DashboardController::class);
 
 Auth::routes();
 
