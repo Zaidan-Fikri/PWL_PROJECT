@@ -18,3 +18,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/dashboard', 'DashboardController@dashboard');
 
 Route::get('/data-karyawan', 'DataKarController@datakar');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
