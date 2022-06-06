@@ -1,11 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
+@if ($message = Session::get('success'))
+  <div class="alert alert-success container-fluid py-4">
+    <p>{{ $message}}</p>
+  </div>
+@endif
 <div class="container-fluid py-4">
 <div class="row">
     <div class="col-12">
       <div class="card mb-4">
-        <div class="text-center card-header pb-0">
+        <div class="text-left card-header pb-0">
+          <a class="btn btn-success" href="{{ route('karyawan.create') }}" style="float:right; margin-right:1cm">+</a>
           <h6>Karyawan</h6>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
@@ -40,17 +46,16 @@
                   </td>
                   <td>
                     <p class="text-xs font-weight-bold mb-0">{{ $kar -> no_hp }}</p>
-                    {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
                   </td>
                   <td>
                     <p class="text-xs font-weight-bold mb-0">{{ $kar -> jabatan}}</p>
-                    {{-- <p class="text-xs text-secondary mb-0">Organization</p> --}}
                   </td>
                   <td class="align-middle text-center">
-                    <form action="" method="POST">
-                      <a class="btn btn-info" href="{{ route('karyawan.show', $kar->id) }}">Show</a>
-                      <a class="btn btn-primary" href="">Edit</a>
-                      <a class="btn btn-warning" href="">Delete</a>
+                    <form action="{{ route('karyawan.destroy', ['karyawan'=>$kar->id])}}" method="POST">
+                      <a class="btn btn-info" href="{{ route('karyawan.show', $kar->id) }}">Profile</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                   </td>
                 </tr>

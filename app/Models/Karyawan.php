@@ -11,10 +11,10 @@ class Karyawan extends Model
     protected $primaryKey = 'id';
     // use HasFactory;
     protected $fillable = [
-        'Foto',
-        'Nama',
-        'Email',
-        'No HP',
-        'Jabatan',
+        'foto',
+        'nama',
+        'email',
+        'no_hp',
+        'jabatan',
     ];
 }
