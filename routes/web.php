@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\DataKarController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\DashboardController;
 Route::resource('karyawan', DataKarController::class);
 
 Route::resource('dashboard', DashboardController::class);
+
+Route::resource('barang', BarangController::class);
 
 Auth::routes();
 
