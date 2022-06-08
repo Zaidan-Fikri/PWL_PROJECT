@@ -6,6 +6,7 @@ use App\Http\Controllers\DataKarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ Route::resource('dashboard', DashboardController::class);
 Route::resource('barang', BarangController::class);
 
 Route::resource('customer', CustomerController::class);
+
+Route::resource('supplier', SupplierController::class);
 
 Auth::routes();
 
