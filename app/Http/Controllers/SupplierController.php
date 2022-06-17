@@ -19,12 +19,13 @@ public function create(){
 }
 
 public function store(Request $request){
-    if ($request->file('foto')) {
-        $image_name = $request->file('foto')->store('images','public');
-    }
+    $upload = "";
+        if($request->file('gambar')){
+            $upload = $request->file('gambar')->store('images', 'public');
+        }
 
     Supplier::create([
-        'foto' => $image_name,
+        'foto' => $upload,
         'nama' => $request->nama,
         'email' => $request->email,
         'no_hp' => $request->no_hp,
