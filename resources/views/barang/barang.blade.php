@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-@if ($message = Session::get('success'))
+{{-- @if ($message = Session::get('success'))
   <div class="alert alert-success container-fluid py-4">
     <p>{{ $message}}</p>
   </div>
-@endif
+@endif --}}
 <div class="container-fluid py-4">
 <div class="row">
     <div class="col-12">
@@ -14,6 +14,11 @@
           <a class="btn btn-success" href="{{ route('barang.create') }}" style="float:right; margin-right:1cm">+</a>
           <h6>Barang</h6>
         </div>
+        @if ($message = Session::get('success'))
+          <div class="alert alert-success container-fluid py-4">
+            <p>{{ $message}}</p>
+          </div>
+        @endif
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
             <table class="table align-items-center mb-0">
@@ -36,7 +41,7 @@
                   <td>
                     <div class="d-flex px-2 py-1">
                       <div>
-                        <img src="{{ $bar -> foto }}" class="avatar avatar-sm me-3">
+                        <img src="{{ asset('storage/'.$bar -> foto) }}" class="avatar avatar-sm me-3">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="mb-0 text-sm">{{ $bar -> nama_barang }}</h6>

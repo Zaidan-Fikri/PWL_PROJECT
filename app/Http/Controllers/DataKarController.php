@@ -19,17 +19,19 @@ class DataKarController extends Controller
     }
 
     public function store(Request $request){
-        // return dd($request);
-        if($request->file('foto')){
-            $image_name = $request->file('foto')->store('images', 'public');
+        // return dd($request->file());
+        // $image_name = '';
+        $upload = "";
+        if($request->file('gambar')){
+            $upload = $request->file('gambar')->store('images', 'public');
         }
 
         Karyawan::create([
-            'foto' => $image_name,
+            'foto' => $upload,
             'nama' => $request->nama,
             'email' => $request->email,
             'no_hp' => $request->no_hp,
-            'jabatan' => $request->jabatan,
+            'jabatan' => $request->jabatan
         ]);
 
         return redirect()->route('karyawan.index')

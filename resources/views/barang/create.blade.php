@@ -17,14 +17,14 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="{{ route('barang.store') }}" id="myForm" enctype="multipart/formdata">
+            <form method="post" action="{{ route('barang.store') }}" id="myForm" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
                     <label for="Seri">Seri</label>
                     <input type="text" name="seri" class="form-control" id="Seri" ariadescribedby="Seri" >
                 </div>
                 <div class="form-group">
-                    <label for="foto">Foto Profil</label>
+                    <label for="foto">Foto Barang</label>
                     <input type="file" name="foto" class="form-control" required="required">
                 </div>
                 <div class="form-group">
