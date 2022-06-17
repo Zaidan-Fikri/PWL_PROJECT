@@ -17,7 +17,7 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="{{ route('supplier.store') }}" id="myForm" enctype="multipart/formdata">
+            <form method="post" action="{{ route('supplier.store') }}" id="myForm" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
                     <label for="foto">Foto Profil</label>
