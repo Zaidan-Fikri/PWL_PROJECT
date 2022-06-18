@@ -21,7 +21,7 @@
             @csrf
                 <div class="form-group">
                     <label for="foto">Foto Profil</label>
-                    <input type="file" name="foto" class="form-control" required="required">
+                    <input type="file" name="gambar" class="form-control" required="required">
                 </div>
                 <div class="form-group">
                     <label for="Nama">Nama</label>

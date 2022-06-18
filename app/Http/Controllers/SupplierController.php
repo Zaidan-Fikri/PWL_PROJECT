@@ -18,13 +18,15 @@ class SupplierController extends Controller
         return view('supplier.create',['judul' => 'Tambah Supplier', 'nama' => 'Tambah Supplier']);
     }
 
-    public function store(Request $request){
-    if ($request->file('foto')) {
-        $image_name = $request->file('foto')->store('images','public');
-    }
+
+public function store(Request $request){
+    $upload = "";
+        if($request->file('gambar')){
+            $upload = $request->file('gambar')->store('images', 'public');
+        }
 
     Supplier::create([
-        'foto' => $image_name,
+        'foto' => $upload,
         'nama' => $request->nama,
         'email' => $request->email,
         'no_hp' => $request->no_hp,
