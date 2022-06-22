@@ -12,11 +12,12 @@ class SupplierController extends Controller
     public function index(){
         $supplier = Supplier::all();
         return view('supplier.supplier', ['judul'=>'Data Supplier', 'nama' =>'Data Supplier', 'supplier' => $supplier]);
-}
+    }
 
-public function create(){
-    return view('supplier.create',['judul' => 'Tambah Supplier', 'nama' => 'Tambah Supplier']);
-}
+    public function create(){
+        return view('supplier.create',['judul' => 'Tambah Supplier', 'nama' => 'Tambah Supplier']);
+    }
+
 
 public function store(Request $request){
     $upload = "";
