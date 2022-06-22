@@ -36,7 +36,7 @@ public function store(Request $request){
     }
 
     public function show($id){
-        $customer = Supplier::find($id); 
+        $supplier = Supplier::find($id); 
         return view('supplier.detail',['judul' => 'Profile','nama' => 'Profile', 'supplier' => $supplier]);
     }
 
