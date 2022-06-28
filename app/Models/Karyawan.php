@@ -11,6 +11,7 @@ class Karyawan extends Model
     protected $primaryKey = 'id';
     // use HasFactory;
     protected $fillable = [
+        'id',
         'foto',
         'nama',
         'email',

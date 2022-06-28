@@ -39,8 +39,8 @@ class BarangController extends Controller
     }
 
     public function show($seri){
-        $barang = Barang::find('seri', $seri);
-        return view('barang.detail', ['judul' => 'Profile', 'nama' => 'Profile', 'barang' => $barang]);
+        $barang = Barang::find($seri);
+        return view('barang.detail', ['judul' => 'Detail Barang', 'nama' => 'Detail Barang', 'barang' => $barang]);
     }
 
     public function destroy($seri){

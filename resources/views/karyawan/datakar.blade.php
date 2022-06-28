@@ -53,6 +53,7 @@
                   <td class="align-middle text-center">
                     <form action="{{ route('karyawan.destroy', ['karyawan'=>$kar->id])}}" method="POST">
                       <a class="btn btn-info" href="{{ route('karyawan.show', $kar->id) }}">Profile</a>
+                      <a class="btn btn-primary" href="{{ route('karyawan.edit',$kar->id) }}">Edit</a>
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>
@@ -62,6 +63,9 @@
                 @endforeach
               </tbody>
             </table>
+            <div class="page-link">
+              {{ $karyawan->links() }}
+            </div>
           </div>
         </div>
       </div>

@@ -56,7 +56,7 @@
                   </td>
                   <td class="align-middle text-center">
                     <form action="{{ route('barang.destroy', ['barang'=>$bar->seri])}}" method="POST">
-                      <a class="btn btn-info" href="{{ route('barang.show', $bar->seri) }}">Profile</a>
+                      <a class="btn btn-info" href="{{ route('barang.show', $bar->seri) }}">Detail</a>
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>

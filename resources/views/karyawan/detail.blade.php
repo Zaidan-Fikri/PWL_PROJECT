@@ -6,7 +6,7 @@
       <div class="row gx-4">
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
-            <img src="{{ asset('storage/'.$kar -> foto) }}" class="w-100 border-radius-lg shadow-sm">
+            <img src="{{ asset('storage/'.$karyawan -> foto) }}" class="w-100 border-radius-lg shadow-sm">
           </div>
         </div>
         <div class="col-auto my-auto">
@@ -23,10 +23,11 @@
           <div class="nav-wrapper position-relative end-0">
             <ul class="nav nav-pills nav-fill p-1" role="tablist">
               <li class="nav-item">
-              </li>
+                <a href="" class="btn btn-primary btn-sm ms-auto" style="margin-left:5mm; margin-right:5mm; height:35px; text-align:center; float:right">Edit Profile</a>
+              {{-- </li>
               <li class="nav-item">
               </li>
-              <li class="nav-item">
+              <li class="nav-item"> --}}
               </li>
             </ul>
           </div>
@@ -47,32 +48,30 @@
           <div class="card-body">
             <p class="text-uppercase text-sm">User Information</p>
             <div class="row">
+              <input type="hidden" name="id" value="{{ $karyawan -> id}}">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="example-text-input" class="form-control-label">Username</label>
-                  <input class="form-control" type="text" value="{{ $karyawan -> nama }}">
+                  <input class="form-control"  name="nama" type="text" value="{{ $karyawan -> nama }}">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="example-text-input" class="form-control-label">Email address</label>
-                  <input class="form-control" type="email" value="{{ $karyawan -> email }}">
+                  <input class="form-control" name="email" type="email" value="{{ $karyawan -> email }}">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="example-text-input" class="form-control-label">Nomor Telepon</label>
-                  <input class="form-control" type="text" value="{{ $karyawan -> no_hp}}">
+                  <input class="form-control" name="no_hp" type="text" value="{{ $karyawan -> no_hp}}">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="example-text-input" class="form-control-label">Jabatan</label>
-                  <input class="form-control" type="text" value="{{ $karyawan -> jabatan }}">
+                  <input class="form-control" name="jabatan" type="text" value="{{ $karyawan -> jabatan }}">
                 </div>
-              </div>
-              <div class="d-flex align-items-center">
-              <button class="btn btn-primary btn-sm ms-auto">Update</button>
               </div>
             </div>
 @endsection
