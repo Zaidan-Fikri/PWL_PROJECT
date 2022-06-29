@@ -76,9 +76,9 @@ class BarangMasukController extends Controller
     }
 
     public function cetak_pdf(){
-        $barangmasuk = BarangMasuk::all();
-        return dd($barangmasuk);
-        $pdf = PDF::loadview('barang_masuk.cetak_pdf', ['barang_masuk' => $barangmasuk]);
+        $barang_masuk = BarangMasuk::all();
+        $pdf = PDF::loadview('barang_masuk.cetak_pdf', compact('barang_masuk'));
+        // $pdf->setPaper('F4', 'landscape');
         return $pdf->stream();
     }
 }

@@ -11,7 +11,7 @@
     <div class="col-12">
       <div class="card mb-4">
         <div class="text-left card-header pb-0">
-          <a class="btn btn-warning" href="{{ route('barang_masuk.cetak_pdf')}} " style="float:right; margin-right:1cm">Cetak PDF</a>
+          <a class="btn btn-warning" href="{{ url('/cetak_pdf')}} " style="float:right; margin-right:1cm">Cetak PDF</a>
           <a class="btn btn-success" href="{{ route('barang_masuk.create') }} " style="float:right; margin-right:1cm">+</a>
           <h6>Barang</h6>
         </div>

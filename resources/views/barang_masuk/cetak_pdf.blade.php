@@ -28,7 +28,7 @@
                 @foreach($barang_masuk as $bar)
                 <tr>
                     <td>{{ $bar->id }}</td>
-                    <td><img width="100px" src="{{storage_path('app/public/'.$a->featured_image) }}"></td>
+                    <td><img width="100px" src="{{storage_path('app/public/'.$bar->foto) }}"></td>
                     <td>{{ $bar->nama_barang }}</td>
                     <td>{{ $bar->supplier }}</td>
                     <td>{{ $bar->jumlah }}</td>
