@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLaporanPenjualan extends Migration
+class CreateLaporanPenjualanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,10 @@ class CreateLaporanPenjualan extends Migration
     {
         Schema::create('laporan_penjualan', function (Blueprint $table) {
             $table->id();
+            $table->string('foto');
+            $table->string('nama_barang', 30);
+            $table->integer('harga');
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }

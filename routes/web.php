@@ -8,6 +8,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BarangMasukController;
+use App\Http\Controllers\LaporanPenjualanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,8 @@ Route::resource('customer', CustomerController::class);
 Route::resource('supplier', SupplierController::class);
 
 Route::resource('barang_masuk', BarangMasukController::class);
+
+Route::resource('laporan_penjualan', LaporanPenjualanController::class);
 
 Route::get('/cetak_pdf', [BarangMasukController::class, 'cetak_pdf']);
 
