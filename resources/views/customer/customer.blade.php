@@ -62,6 +62,9 @@
                 @endforeach
               </tbody>
             </table>
+            <div class="page-link">
+              {{ $barang->links() }}
+            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class CustomerController extends Controller
 {
     public function index(){
-        $customer = Customer::all();
+        $customer = Customer::orderBy('id', 'asc')->paginate(3);
         return view('customer.customer', ['judul'=>'Data Customer', 'nama' =>'Data Customer', 'customer' => $customer]);
     }
 

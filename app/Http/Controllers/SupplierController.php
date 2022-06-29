@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class SupplierController extends Controller
 {
     public function index(){
-        $supplier = Supplier::all();
+        $supplier = Supplier::orderBy('id', 'asc')->paginate(3);
         return view('supplier.supplier', ['judul'=>'Data Supplier', 'nama' =>'Data Supplier', 'supplier' => $supplier]);
     }
 
