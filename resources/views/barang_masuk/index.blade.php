@@ -11,7 +11,8 @@
     <div class="col-12">
       <div class="card mb-4">
         <div class="text-left card-header pb-0">
-          <a class="btn btn-success" href="{{ route('barang.create') }}" style="float:right; margin-right:1cm">+</a>
+          <a class="btn btn-warning" href="{{ route('barang_masuk.cetak_pdf')}} " style="float:right; margin-right:1cm">Cetak PDF</a>
+          <a class="btn btn-success" href="{{ route('barang_masuk.create') }} " style="float:right; margin-right:1cm">+</a>
           <h6>Barang</h6>
         </div>
         @if ($message = Session::get('success'))
@@ -24,19 +25,19 @@
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Seri</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Barang</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Stok</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Harga</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Supplier</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jumlah</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                   <th class="text-secondary opacity-7"></th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($barang as $bar)
+                @foreach ($barang_masuk as $bar)
                 <tr>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0 text-center">{{ $bar -> seri }}</p>
+                    <p class="text-xs font-weight-bold mb-0 text-center">{{ $bar -> id }}</p>
                   </td>
                   <td>
                     <div class="d-flex px-2 py-1">
@@ -49,14 +50,14 @@
                     </div>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">{{ $bar -> stok }}</p>
+                    <p class="text-xs font-weight-bold mb-0">{{ $bar -> supplier }}</p>
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">{{ $bar -> harga }}</p>
+                    <p class="text-xs font-weight-bold mb-0">{{ $bar -> jumlah }}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <form action="{{ route('barang.destroy', ['barang'=>$bar->seri])}}" method="POST">
-                      <a class="btn btn-info" href="{{ route('barang.show', $bar->seri) }}">Detail</a>
+                    <form action="{{ route('barang_masuk.destroy', ['barang_masuk'=>$bar->id])}}" method="POST">
+                      <a class="btn btn-info" href="{{ route('barang_masuk.show', $bar->id) }}">Detail</a>
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>
@@ -66,9 +67,6 @@
                 @endforeach
               </tbody>
             </table>
-            <div class="page-link">
-              {{ $barang->links() }}
-            </div>
           </div>
         </div>
       </div>

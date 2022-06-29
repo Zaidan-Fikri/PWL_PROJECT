@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BarangMasukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,10 @@ Route::resource('barang', BarangController::class);
 Route::resource('customer', CustomerController::class);
 
 Route::resource('supplier', SupplierController::class);
+
+Route::resource('barang_masuk', BarangMasukController::class);
+
+Route::get('/barang_masuk/cetak_pdf', [BarangMasukController::class, 'cetak_pdf'])->name('barang_masuk.cetak_pdf');
 
 Auth::routes();
 

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class BarangController extends Controller
 {
     public function index(){
-        $barang = Barang::all();
+        $barang = Barang::orderBy('seri', 'asc')->paginate(3);
         return view('barang.barang', ['judul' => 'Data Barang', 'nama' => 'Data Barang', 'barang' => $barang]);
     }
 
