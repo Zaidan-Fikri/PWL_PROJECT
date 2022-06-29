@@ -63,7 +63,7 @@
               </tbody>
             </table>
             <div class="page-link">
-              {{ $barang->links() }}
+              {{ $customer->links() }}
             </div>
           </div>
         </div>

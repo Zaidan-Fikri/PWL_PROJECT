@@ -24,7 +24,7 @@
                     <input type="file" name="gambar" class="form-control" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="Nama">Nama</label>
+                    <label for="Nama">Nama Perusahaan</label>
                     <input type="Nama" name="nama" class="form-control" id="Nama" ariadescribedby="Nama" >
                 </div>
                 <div class="form-group">

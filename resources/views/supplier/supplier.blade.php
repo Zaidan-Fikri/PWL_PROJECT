@@ -22,6 +22,7 @@
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Perusahaan</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nomor</th>
                   <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ALamat</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                   <th class="text-secondary opacity-7"></th>
@@ -40,9 +41,11 @@
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="mb-0 text-sm">{{ $sup -> nama }}</h6>
-                        <p class="text-xs text-secondary mb-0">{{ $sup -> email }}</p>
                       </div>
                     </div>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">{{ $sup -> email }}</p>
                   </td>
                   <td>
                     <p class="text-xs font-weight-bold mb-0">{{ $sup -> no_hp }}</p>
@@ -63,7 +66,7 @@
               </tbody>
             </table>
             <div class="page-link">
-              {{ $barang->links() }}
+              {{ $supplier->links() }}
             </div>
           </div>
         </div>

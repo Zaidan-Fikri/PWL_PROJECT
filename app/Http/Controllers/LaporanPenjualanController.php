@@ -46,7 +46,7 @@ class LaporanPenjualanController extends Controller
     }
 
     public function edit($id){
-        $laporanpenjualan = KLaporan_Penjualan::find($id);
+        $laporanpenjualan = Laporan_Penjualan::find($id);
         return view('laporan_penjualan.edit', ['judul' => 'Edit Barang', 'nama' => 'Edit Barang', 'laporan_penjualan' => $laporanpenjualan]);
     }
 

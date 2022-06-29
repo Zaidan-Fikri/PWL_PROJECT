@@ -25,9 +25,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($barang_masuk as $bar)
+                @foreach($laporan_penjualan as $lap)
                 <tr>
-                    <td>{{ $bar->id }}</td>
+                    <td>{{ $lap->id }}</td>
                     <td><img width="100px" src="{{storage_path('app/public/'.$lap->foto) }}"></td>
                     <td>{{ $lap->nama_barang }}</td>
                     <td>{{ $lap->harga }}</td>

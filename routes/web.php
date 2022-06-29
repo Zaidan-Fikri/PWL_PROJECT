@@ -36,6 +36,8 @@ Route::resource('laporan_penjualan', LaporanPenjualanController::class);
 
 Route::get('/cetak_pdf', [BarangMasukController::class, 'cetak_pdf']);
 
+Route::get('/cetak_pdf/laporanpenjualan', [LaporanPenjualanController::class, 'cetak_pdf']);
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

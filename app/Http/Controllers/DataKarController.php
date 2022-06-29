@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class DataKarController extends Controller
 {
     public function index(){
-        $karyawan = Karyawan::orderBy('id', 'asc')->paginate(2);
+        $karyawan = Karyawan::orderBy('id', 'asc')->paginate(3);
         return view('karyawan.datakar', ['judul' => 'Data Karyawan', 'nama' => 'Data Karyawan', 'karyawan' => $karyawan]);
     }
 
