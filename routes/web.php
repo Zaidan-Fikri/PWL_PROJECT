@@ -20,6 +20,8 @@ use App\Http\Controllers\LaporanPenjualanController;
 |
 */
 
+Route::redirect("/", "dashboard");
+
 Route::resource('karyawan', DataKarController::class);
 
 Route::resource('dashboard', DashboardController::class);

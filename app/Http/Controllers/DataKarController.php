@@ -54,15 +54,31 @@ class DataKarController extends Controller
         // if($karyawan->foto && file_exists(storage_path('app/public/' . $karyawan->foto))){
         //     \Storage::delete('public/' . $karyawan->foto);
         // }
-        $update = $request->file('foto')->store('images', 'public');
-        $karyawan->foto = $update;
+        // $update = $request->file('foto')->store('images', 'public');
+        // $karyawan->foto = $update;
 
-        $karyawan->nama = $request->nama;
-        $karyawan->email = $request->email;
-        $karyawan->no_hp = $request->no_hp;
-        $karyawan->jabatan = $request->jabatan;
+        // $karyawan->nama = $request->nama;
+        // $karyawan->email = $request->email;
+        // $karyawan->no_hp = $request->no_hp;
+        // $karyawan->jabatan = $request->jabatan;
         
-        $karyawan->save();
+        // $karyawan->save();
+        if ($request->file('gambar')) {
+            if ($karyawan->foto && file_exists(storage_path('app/public/' . $karyawan->foto))) {
+                \Storage::delete('public/' . $karyawan->foto);
+            }
+            $upload = $request->file('gambar')->store('images', 'public');
+        } else {
+            $upload = $karyawan->foto;
+        }
+
+        $karyawan->update([
+            'foto' => $upload,
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
+            'jabatan' => $request->jabatan
+        ]);
         return redirect()->route('karyawan.index')
         ->with('success', 'Karyawan Berhasil Dirubah');
     }
